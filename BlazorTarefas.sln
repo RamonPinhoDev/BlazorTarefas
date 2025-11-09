@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorTarefas", "BlazorTare
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorTarefas.Client", "BlazorTarefas\BlazorTarefas.Client\BlazorTarefas.Client.csproj", "{EEB8F9F8-A3F4-4BF6-9E1A-F6E5988EF400}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorTarefas.Shared", "BlazorTarefas.Shared\BlazorTarefas.Shared.csproj", "{3547660A-3374-486A-B50B-3E3780EDAC78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EEB8F9F8-A3F4-4BF6-9E1A-F6E5988EF400}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEB8F9F8-A3F4-4BF6-9E1A-F6E5988EF400}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEB8F9F8-A3F4-4BF6-9E1A-F6E5988EF400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3547660A-3374-486A-B50B-3E3780EDAC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3547660A-3374-486A-B50B-3E3780EDAC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3547660A-3374-486A-B50B-3E3780EDAC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3547660A-3374-486A-B50B-3E3780EDAC78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

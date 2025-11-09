@@ -11,7 +11,7 @@
 } else if(!tarefas.Any()){
     <p>Carregando...</p>
 }else{
-else
+
 {
     <ul class="list-group">
         <li class="list-group-item">
@@ -38,9 +38,11 @@ else
     private List<Tarefa>? tarefas;
 
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        tarefas = TarefaDados.ObterTarefas;
+        tarefas =  TarefaDados.ObterTarefas();
+
+       
     }
 
 
