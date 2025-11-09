@@ -1,4 +1,6 @@
 ﻿@page "/tarefas"
+@page "/tarefas/{status}"
+@page "/listas"
 @rendermode InteractiveServer
 
 <h1>Lista de Tarefas</h1>
@@ -6,7 +8,8 @@
     Usando <b>rendermode InteractiveServer</b>
 </h5>
 <br />
-
+<button class="btn btn-link mb-3" @onclick="IrParaResumo">
+    <i class="bi bi-bar-chart-line"></i> Ver Resumo</button>
 @if (tarefas == null)
 {
     <img src="https://media.giphy.com/media/qHOf8vC1ppFQs/giphy.gif" width="100" class="icone-carregando" />
@@ -47,12 +50,23 @@ else
     </table>
 }
 @code {
+    [Parameter]
+    public string? Status { get; set; }
+    [Inject]
+    public NavigationManager Nav { get; set; } = default!;
     private List<Tarefa>? tarefas;
 
     protected override async Task OnInitializedAsync()
     {
         await Task.Delay(2000);
-        tarefas = TarefaDados.ObterTarefas();
+        var todas = TarefaDados.ObterTarefas();
+
+        tarefas = Status?.ToLower() switch
+        {
+            "concluidas" => todas.Where(t => t.Concluida).ToList(),
+            "pendentes" => todas.Where(t => !t.Concluida).ToList(),
+            _ => todas
+        };
     }
     private void RemoverTarefa(Guid id)
     {
@@ -64,5 +78,11 @@ else
 
         if (tarefa != null)
             tarefa.Concluida = !tarefa.Concluida;
+    }
+
+
+    private void IrParaResumo()
+    {
+        Nav.NavigateTo("/tarefas-resumo");
     }
 }
